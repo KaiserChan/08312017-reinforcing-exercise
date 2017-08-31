@@ -1,0 +1,54 @@
+<!-- Use ERB to refactor this form and make it more DRY:
+
+<label for="email">email</label>
+<input type="text" name="email" id="email" class="fancy_form" >
+
+<label for="username">username</label>
+<input type="text" name="username" id="username" class="fancy_form" >
+
+<label for="pin">pin</label>
+<input type="text" name="pin" id="pin" class="fancy_form"
+
+<label for="website">website</label>
+<input type="text" name="website" id="website" class="fancy_form" >
+
+<label for="address">address</label>
+<input type="text" name="address" id="address" class="fancy_form" >
+
+<label for="alias">alias</label>
+<input type="text" name="alias" id="alias" class="fancy_form" > -->
+
+
+<!-- Solution 1 -->
+
+<%= f.label :email %> <br>
+<%= f.text_field :email %>
+
+<%= f.label :username %> <br>
+<%= f.text_field :username %>
+
+<%= f.label :pin %> <br>
+<%= f.text_field :pin %>
+
+<%= f.label :website %> <br>
+<%= f.text_field :website %>
+
+<%= f.label :address %> <br>
+<%= f.text_field :address %>
+
+<%= f.label :alias %> <br>
+<%= f.text_field :alias %>
+
+
+
+<!-- Solution 2 -->
+
+<%= form_for :fancy_form do |f| %>
+  Email    : <%= f.text_field :emal %><br>
+  Username : <%= f.text_field :last_name %><br>
+  Pin      : <%= f.text_area :biography %><br>
+  Website  : <%= f.check_box :admin %><br>
+  Address  : <%= f.text_field :address %><br>
+  Alias    : <%= f.text_field :alias %><br>
+  <%= f.submit %>
+<% end %>
