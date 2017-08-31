@@ -21,34 +21,18 @@
 
 <!-- Solution 1 -->
 
-<%= f.label :email %> <br>
-<%= f.text_field :email %>
-
-<%= f.label :username %> <br>
-<%= f.text_field :username %>
-
-<%= f.label :pin %> <br>
-<%= f.text_field :pin %>
-
-<%= f.label :website %> <br>
-<%= f.text_field :website %>
-
-<%= f.label :address %> <br>
-<%= f.text_field :address %>
-
-<%= f.label :alias %> <br>
-<%= f.text_field :alias %>
-
+<%= form_for @fancy_form do |f| %>
+  Email    : <%= f.label :email %> <br> <%= f.text_field :emal %><br>
+  Username : <%= f.label :username %> <br> <%= f.text_field :last_name %><br>
+  Pin      : <%= f.label :pin %> <br> <%= f.text_area :pin %><br>
+  Website  : <%= f.label :website %> <br> <%= f.check_box :website %><br>
+  Address  : <%= f.label :address %> <br> <%= f.text_field :address %><br>
+  Alias    : <%= f.label :alias %> <br> <%= f.text_field :alias %><br>
+  <%= f.submit %>
+<% end %>
 
 
 <!-- Solution 2 -->
-
-<%= form_for :fancy_form do |f| %>
-  Email    : <%= f.text_field :emal %><br>
-  Username : <%= f.text_field :last_name %><br>
-  Pin      : <%= f.text_area :biography %><br>
-  Website  : <%= f.check_box :admin %><br>
-  Address  : <%= f.text_field :address %><br>
-  Alias    : <%= f.text_field :alias %><br>
-  <%= f.submit %>
-<% end %>
+<!--
+<%= form_tag do %>
+<% end %> -->
